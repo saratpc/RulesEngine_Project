@@ -1,4 +1,6 @@
-﻿namespace RulesEngine.Core
+﻿using RulesEngine.DA.Models;
+
+namespace RulesEngine.Core
 {
     public class RulesEngineRuleProcessor : IRulesEngineRuleProcessor
     {
@@ -10,11 +12,11 @@
             _processor = processor;
         }
 
-        public void ProcessRule(string ruleType)
+        public void ProcessRule(RERule rule)
         {
             // switch case
             // based on the Rule Type: call the appropriate processor
-            if(ruleType == "HermesSEOConcatenation")
+            if (rule.RuleType == "HermesSEOConcatenation")
             {
                 //HermesConcatRuleProcessor hermes = new HermesConcatRuleProcessor();
                 //hermes.ProcessHermesConcatRule(1);
@@ -22,7 +24,6 @@
 
 
             }
-
         }
     }
 }

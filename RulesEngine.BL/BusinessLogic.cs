@@ -31,8 +31,6 @@ namespace RulesEngine.BL
                 GetRuleFilters(rule.RuleId);
                 ProcessRuleType(_processor, rule);
             }
-
-            
         }
 
         private void GetRuleFilters(int ruleId)
@@ -49,9 +47,8 @@ namespace RulesEngine.BL
             // ProcessRuleType based on the active rule
             // call da to get the rule's filters
 
-            // TODO: Remove hardcoded rule Id: 1
             //_processor.ProcessHermesConcatRule(1);
-            _processor.ProcessRule(rule.RuleType);
+            _processor.ProcessRule(rule);
 
         }
 

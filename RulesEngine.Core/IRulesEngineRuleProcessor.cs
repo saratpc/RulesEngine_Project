@@ -1,7 +1,9 @@
-﻿namespace RulesEngine.Core
+﻿using RulesEngine.DA.Models;
+
+namespace RulesEngine.Core
 {
     public interface IRulesEngineRuleProcessor
     {
-        void ProcessRule(string ruleType);
+        void ProcessRule(RERule ruleType);
     }
 }

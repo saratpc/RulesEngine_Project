@@ -1,4 +1,5 @@
 ﻿using System;
+using RulesEngine.DA.Models;
 
 namespace RulesEngine.Core
 {
@@ -11,7 +12,7 @@ namespace RulesEngine.Core
             Console.WriteLine($"Performing the configured actions: Calling Hermes WS, Calling Prism WS");
         }
 
-        public void ProcessRule(string ruleType)
+        public void ProcessRule(RERule ruleType)
         {
             // Do something
             // Get Rule Parameters and other stuff.
