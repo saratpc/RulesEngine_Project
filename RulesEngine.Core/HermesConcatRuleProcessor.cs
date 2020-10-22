@@ -7,6 +7,7 @@ namespace RulesEngine.Core
     {
         public void ProcessHermesConcatRule(int ruleId)
         {
+            // This method is redundant. The specific interface can also be deleted.
             Console.WriteLine($"Processing rule filters and forming a dynamic query.");
 
             Console.WriteLine($"Performing the configured actions: Calling Hermes WS, Calling Prism WS");
@@ -14,8 +15,9 @@ namespace RulesEngine.Core
 
         public void ProcessRule(RERule ruleType)
         {
-            // Do something
-            // Get Rule Parameters and other stuff.
+            // TODO
+            // Get Rule Parameters, Rule Filters
+            // Do necessary actions
         }
     }
 }
