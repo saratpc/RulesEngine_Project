@@ -87,6 +87,10 @@
       <Project>{CBE2E0AB-C2D0-406D-92B6-6C02D6CC26FA}</Project>
       <Name>RulesEngine.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RulesEngine.Core\RulesEngine.Core.csproj">
+      <Project>{713A8FA5-F0D2-47F7-BD88-5E155834F7A9}</Project>
+      <Name>RulesEngine.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RulesEngine.DA\RulesEngine.DA.csproj">
       <Project>{C915C427-1EA4-48C5-84D7-C1A61DAA6C70}</Project>
       <Name>RulesEngine.DA</Name>

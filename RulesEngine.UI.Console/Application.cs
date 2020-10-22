@@ -18,7 +18,7 @@ namespace RulesEngine.UI.Console
 
         public void Run()
         {
-            _businessLogic.ProcessData();
+            _businessLogic.ProcessRulesEngineQueue();
         }
     }
 }

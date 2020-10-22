@@ -45,5 +45,11 @@
     <Compile Include="IDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RulesEngine.Core\RulesEngine.Core.csproj">
+      <Project>{713A8FA5-F0D2-47F7-BD88-5E155834F7A9}</Project>
+      <Name>RulesEngine.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

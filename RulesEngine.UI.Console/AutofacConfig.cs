@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using RulesEngine.BL;
 using RulesEngine.Common;
+using RulesEngine.Core;
 using RulesEngine.DA;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,10 @@ namespace RulesEngine.UI.Console
             builder.RegisterType<BusinessLogic>().As<IBusinessLogic>();
 
             builder.RegisterType<DataAccess>().As<IDataAccess>();
+
+            // todo: get by ends with Processor using reflection
+            builder.RegisterType<HermesConcatRuleProcessor>().As<IHermesConcatRuleProcessor>();
+
             builder.RegisterType<Logger>().As<ILogger>();
 
             return builder.Build(); // return the built container

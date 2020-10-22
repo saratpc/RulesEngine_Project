@@ -50,6 +50,10 @@
       <Project>{cbe2e0ab-c2d0-406d-92b6-6c02d6cc26fa}</Project>
       <Name>RulesEngine.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RulesEngine.Core\RulesEngine.Core.csproj">
+      <Project>{713A8FA5-F0D2-47F7-BD88-5E155834F7A9}</Project>
+      <Name>RulesEngine.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RulesEngine.DA\RulesEngine.DA.csproj">
       <Project>{c915c427-1ea4-48c5-84d7-c1a61daa6c70}</Project>
       <Name>RulesEngine.DA</Name>

@@ -22,6 +22,9 @@ namespace RulesEngine.UI.Console
                 var app = scope.Resolve<IApplication>();
                 app.Run();
             }
+
+            System.Console.WriteLine();
+            System.Console.WriteLine("End of program. Hit 'return' key to exit.");
             System.Console.ReadLine();
         }
     }

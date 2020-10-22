@@ -1,7 +1,9 @@
-﻿namespace RulesEngine.DA
+﻿using RulesEngine.Core;
+
+namespace RulesEngine.DA
 {
     public interface IDataAccess
     {
-        void GetDataFromDB();
+        void GetDataFromDB(IHermesConcatRuleProcessor processor);
     }
 }

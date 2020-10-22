@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Common;
+using RulesEngine.Core;
 using RulesEngine.DA;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,16 @@ namespace RulesEngine.BL
         IDataAccess _dataAccess;
         ILogger _logger;
 
-        public BusinessLogic(IDataAccess dataAccess, ILogger logger)
+        IHermesConcatRuleProcessor _processor;
+
+        public BusinessLogic(IDataAccess dataAccess, ILogger logger, IHermesConcatRuleProcessor processor)
         {
             _dataAccess = dataAccess;
             _logger = logger;
+            _processor = processor;
         }
 
-        public void ProcessData()
+        public void ProcessRulesEngineQueue()
         {
             Console.WriteLine("Processing queue");
 
@@ -31,7 +35,7 @@ namespace RulesEngine.BL
             //Logger logger = new Logger();
             //logger.LogMessage("Processed Queue");
 
-            _dataAccess.GetDataFromDB();
+            _dataAccess.GetDataFromDB(_processor);
             _logger.LogMessage("Processed Queue");
         }
     }
