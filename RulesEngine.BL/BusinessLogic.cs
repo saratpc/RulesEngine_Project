@@ -2,11 +2,7 @@
 using RulesEngine.Core;
 using RulesEngine.DA;
 using RulesEngine.DA.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RulesEngine.BL
 {
@@ -49,7 +45,7 @@ namespace RulesEngine.BL
         private void GetRuleFilters(int ruleId)
         {
             _dataAccess.GetFiltersForRule(ruleId);
-            _logger.LogMessage("Getting the filters for Rule 1");
+            _logger.LogMessage($"Getting the filters for Rule {ruleId}");
         }
 
         public void ProcessRuleType(IRulesEngineRuleProcessor _processor)

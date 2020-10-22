@@ -3,11 +3,6 @@ using RulesEngine.BL;
 using RulesEngine.Common;
 using RulesEngine.Core;
 using RulesEngine.DA;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RulesEngine.UI.Console
 {
@@ -23,6 +18,10 @@ namespace RulesEngine.UI.Console
             builder.RegisterType<BusinessLogic>().As<IBusinessLogic>();
 
             builder.RegisterType<DataAccess>().As<IDataAccess>();
+
+            // Configure Data Providers
+            builder.RegisterType<MockDataProvider>().As<IDataProvider>();
+            //builder.RegisterType<CSVDataProvider>().As<IDataProvider>();
 
             // todo: get by ends with Processor using reflection
 

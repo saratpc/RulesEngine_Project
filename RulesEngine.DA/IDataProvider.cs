@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace RulesEngine.DA
 {
-    public interface IDataAccess
+    public interface IDataProvider
     {
         IEnumerable<RERule> GetActiveRules();
-
         string GetFiltersForRule(int ruleId);
     }
 }

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVDataProvider.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="IDataAccess.cs" />
+    <Compile Include="IDataProvider.cs" />
     <Compile Include="MockDataProvider.cs" />
     <Compile Include="Models\RERule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +55,10 @@
       <Name>RulesEngine.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\ActiveRules.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

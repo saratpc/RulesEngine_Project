@@ -1,14 +1,10 @@
 ﻿using RulesEngine.DA.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace RulesEngine.DA
 {
-    public class MockDataProvider : IDataAccess
+    public class MockDataProvider : IDataAccess, IDataProvider
     {
         public IEnumerable<RERule> GetActiveRules()
         {
@@ -20,7 +16,8 @@ namespace RulesEngine.DA
 
         public string GetFiltersForRule(int ruleId)
         {
-            throw new NotImplementedException();
+            // TODO
+            return "";
         }
     }
 }

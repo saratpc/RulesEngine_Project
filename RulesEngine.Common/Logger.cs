@@ -10,7 +10,7 @@ namespace RulesEngine.Common
     {
         public void LogMessage(string message)
         {
-            Console.WriteLine($"Logger: logging {message}");
+            Console.WriteLine($"Logger: {message}");
         }
     }
 }

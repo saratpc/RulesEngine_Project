@@ -10,14 +10,24 @@ namespace RulesEngine.DA
 {
     public class DataAccess : IDataAccess
     {
+        IDataProvider _dataProvider;
+
+        public DataAccess(IDataProvider dataProvider)
+        {
+            _dataProvider = dataProvider;
+        }
+
         public IEnumerable<RERule> GetActiveRules()
         {
             // Write an SP to fetch this data
-            Console.WriteLine("Simulating DB connxn");
-            Console.WriteLine("Getting active rules from Queue");
-            Console.WriteLine("Fetched one rule. Rule Type: Hermes Concat");
+            Console.WriteLine("***********************************");
+            Console.WriteLine($"Getting active rules from Queue using {_dataProvider.GetType()}");
 
-            return new MockDataProvider().GetActiveRules();
+            var activeRules = _dataProvider.GetActiveRules();
+            Console.WriteLine($"No. of active rules = {activeRules.Count()}");
+            Console.WriteLine("***********************************");
+
+            return activeRules;
         }
 
         public string GetFiltersForRule(int ruleId)
