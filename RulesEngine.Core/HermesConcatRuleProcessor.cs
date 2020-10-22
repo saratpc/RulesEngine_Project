@@ -17,7 +17,8 @@ namespace RulesEngine.Core
 
         public void ProcessRule(string ruleType)
         {
-            throw new NotImplementedException();
+            // Do something
+            // Get Rule Parameters and other stuff.
         }
     }
 }

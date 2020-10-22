@@ -7,6 +7,6 @@ namespace RulesEngine.BL
         void ProcessRulesEngineQueue();
 
         // TESTING
-        void ProcessRuleType(IHermesConcatRuleProcessor _processor);
+        void ProcessRuleType(IRulesEngineRuleProcessor _processor);
     }
 }

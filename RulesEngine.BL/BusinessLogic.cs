@@ -1,6 +1,7 @@
 ﻿using RulesEngine.Common;
 using RulesEngine.Core;
 using RulesEngine.DA;
+using RulesEngine.DA.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace RulesEngine.BL
         IDataAccess _dataAccess;
         ILogger _logger;
 
-        IHermesConcatRuleProcessor _processor;
+        IRulesEngineRuleProcessor _processor;
 
-        public BusinessLogic(IDataAccess dataAccess, ILogger logger, IHermesConcatRuleProcessor processor)
+        public BusinessLogic(IDataAccess dataAccess, ILogger logger, IRulesEngineRuleProcessor processor)
         {
             _dataAccess = dataAccess;
             _logger = logger;
@@ -25,7 +26,7 @@ namespace RulesEngine.BL
 
         public void ProcessRulesEngineQueue()
         {
-            Console.WriteLine("Processing queue");
+            _logger.LogMessage("Processing Queue");
 
             // dependency 1
             //DataAccess dataAccess = new DataAccess();
@@ -35,23 +36,23 @@ namespace RulesEngine.BL
             //Logger logger = new Logger();
             //logger.LogMessage("Processed Queue");
 
-            _dataAccess.GetActiveRules();
-            _logger.LogMessage("Processed Queue");
+            IEnumerable<RERule> activeRules = _dataAccess.GetActiveRules();
 
-            // foreach active rule:
-
-            GetRuleFilters();
+            foreach (RERule rule in activeRules)
+            {
+                GetRuleFilters(rule.RuleId);
+            }
 
             ProcessRuleType(_processor);
         }
 
-        private void GetRuleFilters()
+        private void GetRuleFilters(int ruleId)
         {
-            _dataAccess.GetFiltersForRule(1);
+            _dataAccess.GetFiltersForRule(ruleId);
             _logger.LogMessage("Getting the filters for Rule 1");
         }
 
-        public void ProcessRuleType(IHermesConcatRuleProcessor _processor)
+        public void ProcessRuleType(IRulesEngineRuleProcessor _processor)
         {
             // Do the actions for the rule type
             // switch case for Rule Type
@@ -60,7 +61,8 @@ namespace RulesEngine.BL
             // call da to get the rule's filters
 
             // TODO: Remove hardcoded rule Id: 1
-            _processor.ProcessHermesConcatRule(1);
+            //_processor.ProcessHermesConcatRule(1);
+            _processor.ProcessRule("HermesSEOConcatenation");
             
 
         }

@@ -25,6 +25,9 @@ namespace RulesEngine.UI.Console
             builder.RegisterType<DataAccess>().As<IDataAccess>();
 
             // todo: get by ends with Processor using reflection
+
+
+            builder.RegisterType<RulesEngineRuleProcessor>().As<IRulesEngineRuleProcessor>();
             builder.RegisterType<HermesConcatRuleProcessor>().As<IHermesConcatRuleProcessor>();
 
             builder.RegisterType<Logger>().As<ILogger>();
