@@ -29,14 +29,41 @@ namespace RulesEngine.BL
 
             // dependency 1
             //DataAccess dataAccess = new DataAccess();
-            //dataAccess.GetDataFromDB();
+            //dataAccess.GetActiveRules();
 
             // dependency 2
             //Logger logger = new Logger();
             //logger.LogMessage("Processed Queue");
 
-            _dataAccess.GetDataFromDB(_processor);
+            _dataAccess.GetActiveRules();
             _logger.LogMessage("Processed Queue");
+
+            // foreach active rule:
+
+            GetRuleFilters();
+
+            ProcessRuleType(_processor);
         }
+
+        private void GetRuleFilters()
+        {
+            _dataAccess.GetFiltersForRule(1);
+            _logger.LogMessage("Getting the filters for Rule 1");
+        }
+
+        public void ProcessRuleType(IHermesConcatRuleProcessor _processor)
+        {
+            // Do the actions for the rule type
+            // switch case for Rule Type
+
+            // ProcessRuleType based on the active rule
+            // call da to get the rule's filters
+
+            // TODO: Remove hardcoded rule Id: 1
+            _processor.ProcessHermesConcatRule(1);
+            
+
+        }
+
     }
 }

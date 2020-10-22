@@ -43,7 +43,10 @@
   <ItemGroup>
     <Compile Include="HermesConcatRuleProcessor.cs" />
     <Compile Include="IHermesConcatRuleProcessor.cs" />
+    <Compile Include="IRulesEngineRuleProcessor.cs" />
+    <Compile Include="Models\RulesEngineRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesEngineRuleProcessor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,11 +8,16 @@ namespace RulesEngine.Core
 {
     public class HermesConcatRuleProcessor : IHermesConcatRuleProcessor
     {
-        public void GetRuleFilters(int ruleId)
+        public void ProcessHermesConcatRule(int ruleId)
         {
-            Console.WriteLine($"Getting Rule Filters for {ruleId}");
-
             Console.WriteLine($"Processing rule filters and forming a dynamic query.");
+
+            Console.WriteLine($"Performing the configured actions: Calling Hermes WS, Calling Prism WS");
+        }
+
+        public void ProcessRule(string ruleType)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,6 +4,8 @@ namespace RulesEngine.DA
 {
     public interface IDataAccess
     {
-        void GetDataFromDB(IHermesConcatRuleProcessor processor);
+        string GetActiveRules();
+
+        string GetFiltersForRule(int ruleId);
     }
 }

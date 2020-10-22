@@ -1,7 +1,7 @@
 ﻿namespace RulesEngine.Core
 {
-    public interface IHermesConcatRuleProcessor
+    public interface IHermesConcatRuleProcessor: IRulesEngineRuleProcessor
     {
-        void GetRuleFilters(int ruleId);
+        void ProcessHermesConcatRule(int ruleId);
     }
 }

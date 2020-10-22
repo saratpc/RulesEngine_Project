@@ -9,23 +9,21 @@ namespace RulesEngine.DA
 {
     public class DataAccess : IDataAccess
     {
-        IHermesConcatRuleProcessor _processor;
 
-        public void GetDataFromDB(IHermesConcatRuleProcessor processor)
+        public string GetActiveRules()
         {
+            // Write an SP to fetch this data
             Console.WriteLine("Simulating DB connxn");
             Console.WriteLine("Getting active rules from Queue");
             Console.WriteLine("Fetched one rule. Rule Type: Hermes Concat");
 
-            _processor = processor;
-            ProcessRule(_processor);
-           
+            return "Hermes SEO Concat";
         }
 
-        private void ProcessRule(IHermesConcatRuleProcessor processor)
+        public string GetFiltersForRule(int ruleId)
         {
-            // TODO: Remove hardcoded rule Id: 1
-            processor.GetRuleFilters(1);
+            Console.WriteLine($"Getting filters for Rule {ruleId}");
+            return "FilterForRule1";
         }
     }
 }
