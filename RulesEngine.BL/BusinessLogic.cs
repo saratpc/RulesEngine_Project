@@ -24,22 +24,15 @@ namespace RulesEngine.BL
         {
             _logger.LogMessage("Processing Queue");
 
-            // dependency 1
-            //DataAccess dataAccess = new DataAccess();
-            //dataAccess.GetActiveRules();
-
-            // dependency 2
-            //Logger logger = new Logger();
-            //logger.LogMessage("Processed Queue");
-
             IEnumerable<RERule> activeRules = _dataAccess.GetActiveRules();
 
             foreach (RERule rule in activeRules)
             {
                 GetRuleFilters(rule.RuleId);
+                ProcessRuleType(_processor, rule);
             }
 
-            ProcessRuleType(_processor);
+            
         }
 
         private void GetRuleFilters(int ruleId)
@@ -48,7 +41,7 @@ namespace RulesEngine.BL
             _logger.LogMessage($"Getting the filters for Rule {ruleId}");
         }
 
-        public void ProcessRuleType(IRulesEngineRuleProcessor _processor)
+        public void ProcessRuleType(IRulesEngineRuleProcessor _processor, RERule rule)
         {
             // Do the actions for the rule type
             // switch case for Rule Type
@@ -58,8 +51,7 @@ namespace RulesEngine.BL
 
             // TODO: Remove hardcoded rule Id: 1
             //_processor.ProcessHermesConcatRule(1);
-            _processor.ProcessRule("HermesSEOConcatenation");
-            
+            _processor.ProcessRule(rule.RuleType);
 
         }
 

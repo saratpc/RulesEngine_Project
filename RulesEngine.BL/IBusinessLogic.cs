@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Core;
+using RulesEngine.DA.Models;
 
 namespace RulesEngine.BL
 {
@@ -6,7 +7,6 @@ namespace RulesEngine.BL
     {
         void ProcessRulesEngineQueue();
 
-        // TESTING
-        void ProcessRuleType(IRulesEngineRuleProcessor _processor);
+        void ProcessRuleType(IRulesEngineRuleProcessor _processor, RERule rule);
     }
 }
